@@ -1,0 +1,62 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+{% if form != None %}
+
+<br><h2>Пожалуйста заполните и отправьте анкету</h2><br>
+<div>
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+        <td><label for="{{ form.name.id_for_label }}">{{ form.name.label }}*:</label></td><td>
+        {{ form.name }}</td></tr>
+            <tr>
+        <td>
+        <label for="{{ form.city.id_for_label }}">{{ form.city.label }}*:</label></td><td>
+        {{ form.city }}</td></tr>
+        <tr>
+        <td>
+        <label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label></td><td>
+        {{ form.email }}</td></tr>
+        
+        <tr>
+        <td>
+        <label for="{{ form.gender.id_for_label }}">{{ form.gender.label }}*:</label></td><td>
+        {{ form.gender }}</td></tr>
+        <tr>
+        <td>
+        <label for="{{ form.play.id_for_label }}">{{ form.play.label }}*:</label></td><td>
+        {{ form.play }}</td></tr>
+        <tr>
+        <td>
+        <label for="{{ form.like.id_for_label }}">{{ form.like.label }}:</label></td><td>
+        {{ form.like }}</td></tr>
+            <tr>
+        <td>
+        <label for="{{ form.message.id_for_label }}">{{ form.message.label }}:</label></td><td>
+        {{ form.message }}</td></tr>
+        </table>
+        <p>Поля отмечанные * являются обязательными</p>
+        
+        <input type="submit" value="Отправить">
+    </form>
+</div>
+{% else %}
+
+<br><h2>Ваши ответы:</h2>
+<ul>
+    <li><span>Имя:</span> {{ data.name }}</li>
+    <li><span>Откуда:</span> {{ data.city }}</li>
+    <li><span>Увлечение(я):</span> {{ data.job }}</li>
+    <li><span>Пол:</span> {{ data.gender }}</li>
+    <li><span>Главный минус сайта:</span> {{ data.play }}</li>
+    
+    <li><span>Понравился ли Вам сайт:</span> {{ data.like }}</li>
+    <li><span>E-mail:</span> {{ data.email }}</li>
+    <li><span>Оставленный отзыв:</span> {{ data.message }}</li>
+
+</ul>
+<br><h3>Благодарим Вас за оставленный отзыв</h3>
+{% endif %}
+{% endblock %}

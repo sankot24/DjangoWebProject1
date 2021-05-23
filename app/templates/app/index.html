@@ -1,0 +1,48 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h3>Мой блог про Genshin Impact</h3>
+<div class="main-content">
+    Что-то мне не понравилась ни одна из предложенных тем, поэтому я решила накидать мини-блог о своих персонажах в Genshin Impact.<br/>
+    Не то, чтобы это было интересно широкой аудитории, но и обсуждать очень широкие темы мне тоже не нравится, поэтому пусть будет так.<br/>
+    <br/>
+</div>
+
+<div class="container text-center">
+    <h1 class="h3" style="margin-top: 20px; margin-bottom: 5px;">Несколько персонажей из GI</h1>
+    <h2 class="h4" style="margin-top: 0px; margin-bottom: 20px;">для оформления</h2>
+
+    <div id="carousel" class="carousel slide" data-ride="carousel" style="display: inline-block;">
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="/media/джин.png" alt="Джинн">
+            </div>
+            <div class="item">
+                <img src="/media/альбедо.png" alt="Альбедо">
+            </div>
+            <div class="item">
+                <img src="/media/торт.png" alt="Тарталья">
+            </div>
+            <div class="item">
+                <img src="/media/сяо.png" alt="Сяо">
+            </div>
+            <div class="item">
+                <img src="/media/дед.png" alt="дед">
+            </div>
+        </div>
+        <!-- Элементы управления -->
+        <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Предыдущий</span>
+        </a>
+        <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Следующий</span>
+        </a>
+    </div>
+
+</div>
+
+
+{% endblock %}
